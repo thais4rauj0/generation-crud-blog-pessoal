@@ -6,11 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity /*Transforma em entidade*/
@@ -32,7 +35,9 @@ private String texto;
 @UpdateTimestamp /*Mantém a data e o tempo atualizado*/
 private LocalDateTime data;
 
-
+@ManyToOne /*Um para muitos*/
+@JsonIgnoreProperties("postagem") /*indica que uma parte do arquivo Json será ignorado - coloca o tema como subclasse de Postagem*/
+private Tema tema;
 
 public Long getId() {
 	return id;
@@ -65,6 +70,15 @@ public LocalDateTime getData() {
 public void setData(LocalDateTime data) {
 	this.data = data;
 }
+
+public Tema getTema() {
+	return tema;
+}
+
+public void setTema(Tema tema) {
+	this.tema = tema;
+}
+
 
 
 
