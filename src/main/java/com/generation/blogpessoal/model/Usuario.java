@@ -42,6 +42,22 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
+	
+	/*Construtor para realizar os testes unitários. Na criação desse construtor, é importante considerar somente as varíaveis da classe */
+	public Usuario(Long id, String nome, String foto, String usuario, String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.foto = foto;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+	
+
+	public Usuario() {
+	}
+
+
 	public Long getId() {
 		return id;
 	}
