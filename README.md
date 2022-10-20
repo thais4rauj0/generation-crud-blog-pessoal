@@ -1,4 +1,4 @@
-# generation-crud-blog-pessoal
+# Projeto Blog Pessoal - Generation Brasil
 Desenvolvimento do Blog Pessoal com CRUD - Atividade Generation Brasil
 
 
